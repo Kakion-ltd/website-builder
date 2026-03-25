@@ -306,14 +306,15 @@ p { line-height: 1.75; }
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--brand);
-    border: 5px solid var(--brand);
-    background: transparent;
+    color: #fff;
+    border: none;
+    background: var(--brand);
+    border-radius: 5px;
     white-space: nowrap;
     transition: background 0.2s ease, color 0.2s ease;
   }
   .nav-contact-btn:hover,
-  .nav-contact-btn:active { background: var(--brand); color: #fff; }
+  .nav-contact-btn:active { background: var(--brand-dark); }
   .nav-hamburger { display: flex; margin-left: 4px; }
 }
 
