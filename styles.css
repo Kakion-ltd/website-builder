@@ -285,15 +285,8 @@ p { line-height: 1.75; }
 .mobile-services-toggle.open svg { transform: rotate(180deg); }
 .mobile-services-toggle:active { background: var(--brand-dark); }
 
-/* Mobile call icon — hidden on desktop */
-.nav-call-icon {
-  display: none;
-}
-
-@keyframes callGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(11,175,232,0.22); }
-  50%       { box-shadow: 0 0 0 8px rgba(11,175,232,0); }
-}
+/* Mobile contact button — hidden on desktop */
+.nav-contact-btn { display: none; }
 
 @media (max-width: 960px) {
   .nav-inner { justify-content: flex-start; }
@@ -305,20 +298,22 @@ p { line-height: 1.75; }
     gap: 6px;
   }
   .nav-actions .nav-quote-btn { display: none !important; }
-  .nav-call-icon {
-    display: flex;
+  .nav-contact-btn {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brand);
-    color: #fff;
-    flex-shrink: 0;
-    animation: callGlow 2.4s ease-in-out infinite;
-    transition: transform 0.2s ease, background 0.2s ease;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand);
+    border: 5px solid var(--brand);
+    background: transparent;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
   }
-  .nav-call-icon:active { transform: scale(0.92); background: var(--brand-dark); }
+  .nav-contact-btn:hover,
+  .nav-contact-btn:active { background: var(--brand); color: #fff; }
   .nav-hamburger { display: flex; margin-left: 4px; }
 }
 
