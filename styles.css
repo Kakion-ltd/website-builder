@@ -301,8 +301,8 @@ p { line-height: 1.75; }
   .nav-contact-btn {
     display: inline-flex;
     align-items: center;
-    padding: 6px 14px;
-    font-size: 0.72rem;
+    padding: 7px 16px;
+    font-size: 0.83rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -315,7 +315,7 @@ p { line-height: 1.75; }
   }
   .nav-contact-btn:hover,
   .nav-contact-btn:active { background: var(--brand-dark); }
-  .nav-hamburger { display: flex; margin-left: 4px; }
+  .nav-hamburger { display: flex; margin-left: 12px; }
 }
 
 /* === BUTTONS === */
