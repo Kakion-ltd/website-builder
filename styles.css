@@ -64,6 +64,7 @@ p { line-height: 1.75; }
 
 /* === SECTION SPACING === */
 .section { padding: 96px 0; }
+@media (max-width: 768px) { .section { padding: 60px 0; } }
 .section--alt { background: var(--bg-alt); }
 .section--dark { background: var(--bg-dark); color: var(--white); }
 .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--white); }

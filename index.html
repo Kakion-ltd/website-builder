@@ -99,10 +99,17 @@
         color: rgba(255,255,255,0.75);
       }
       @media (max-width: 860px) {
-        .hero-inner { grid-template-columns: 1fr; min-height: auto; }
-        .hero-image { min-height: 320px; align-self: auto; }
-        .hero-image-badge { left: 16px; }
-        .hero-text { padding: 24px 0 0; }
+        .hero { padding: 40px 0 0; }
+        .hero-inner { grid-template-columns: 1fr; min-height: auto; gap: 32px; padding-bottom: 0; }
+        .hero-image { min-height: 280px; align-self: auto; order: -1; }
+        .hero-image-badge { left: 16px; bottom: 16px; }
+        .hero-text { padding: 24px 0 48px; }
+        .hero-trust { margin-top: 28px; padding-top: 24px; gap: 16px; }
+      }
+      @media (max-width: 480px) {
+        .hero-text h1 { font-size: 2.2rem; }
+        .hero-actions { flex-direction: column; }
+        .hero-actions .btn { text-align: center; justify-content: center; }
       }
     </style>
 
@@ -111,7 +118,7 @@
         <div class="hero-text">
           <span class="eyebrow hero-anim-1">Residential Construction · Ireland</span>
           <h1 class="hero-anim-2">Building Homes<br/>That <span>Stand the<br/>Test of Time</span></h1>
-          <p class="hero-anim-3">Summerville Contractors Ltd delivers premium extensions, new builds, and full renovations across Dublin and surrounding counties — crafted with precision, managed with transparency.</p>
+          <p class="hero-anim-3">Summerville Contractors Ltd delivers premium extensions, new builds, and full renovations across Dublin and surrounding counties, crafted with precision and managed with transparency.</p>
           <div class="hero-actions hero-anim-4">
             <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
             <a href="projects.html" class="btn btn-outline btn-lg">View Our Work</a>
@@ -280,7 +287,7 @@
         </div>
         <a href="projects.html" class="btn btn-outline">View All Projects</a>
       </div>
-      <div class="project-grid" style="grid-template-columns:repeat(3,1fr);" data-stagger="0.1">
+      <div class="project-grid" data-stagger="0.1">
         <div class="project-card" style="aspect-ratio:4/3;">
           <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="New build, South Dublin" />
           <div class="project-card-overlay">
