@@ -109,20 +109,6 @@ p { line-height: 1.75; }
   transition: color 0.18s;
 }
 .nav-links > li > a { position: relative; }
-.nav-links > li > a::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 14px;
-  right: 14px;
-  height: 2px;
-  background: var(--brand);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.22s ease;
-}
-.nav-links > li > a:hover::after,
-.nav-links > li > a.active::after { transform: scaleX(1); }
 .nav-links > li > a:hover,
 .nav-links > li > a.active { color: var(--brand); }
 
@@ -797,7 +783,7 @@ select.form-control {
   content: '';
   position: absolute;
   bottom: 0; left: 14px; right: 14px;
-  height: 2px;
+  height: 1px;
   background: var(--brand);
   transform: scaleX(0);
   transform-origin: right center;
