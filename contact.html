@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Summerville Contractors Ltd</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .call-cta-block {
+      background: var(--brand);
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .call-cta-block::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .call-cta-block::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(13,27,42,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .call-cta-block > * { position: relative; z-index: 1; }
+    .call-number {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .call-number-icon {
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      animation: phonePulse 2.5s ease-in-out infinite;
+    }
+    @keyframes phonePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+      50% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+    }
+    .call-number a {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      transition: opacity 0.2s;
+    }
+    .call-number a:hover { opacity: 0.85; }
+    .call-number small {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 2px;
+    }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--brand);
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: 2px solid var(--white);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+    .btn-call:hover {
+      background: rgba(255,255,255,0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+      margin-top: 14px;
+    }
+    .btn-email:hover {
+      border-color: rgba(255,255,255,0.7);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-top: 32px;
+    }
+    .hours-cell {
+      background: var(--white);
+      padding: 14px 16px;
+    }
+    .hours-cell .day { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .hours-cell .time { font-size: 0.88rem; font-weight: 600; color: var(--dark); }
+    .hours-cell .time.closed { color: var(--muted); }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .area-tag {
+      padding: 6px 14px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .area-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--brand);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=80');">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <span>Contact</span>
+      </nav>
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Contact Us</h1>
+      <p>Ready to discuss your project? Call us directly for a fast response — or reach out by email and we'll get back to you within one business day.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CALL CTA — full width prominence -->
+  <section style="background:var(--bg-alt);padding:64px 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;flex-wrap:wrap;" class="contact-cta-hero">
+        <div>
+          <span class="eyebrow">Speak to Our Team</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px;">Get a Free Quote Today</h2>
+          <p style="color:var(--muted);max-width:520px;">The fastest way to get started is to call us directly. We'll discuss your project, answer your questions, and arrange a free site visit — usually within 48 hours.</p>
+        </div>
+        <a href="tel:+353000000000" class="btn btn-primary btn-lg" style="white-space:nowrap;font-size:1rem;padding:20px 44px;">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call Now — Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT — Info + Hours + Areas -->
+        <div>
+          <span class="eyebrow">Contact Details</span>
+          <div class="divider"></div>
+          <h2 style="margin-bottom:24px;">We're Here to Help</h2>
+
+          <div class="info-contact-item" data-reveal>
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <span class="info-label">Phone — Call or WhatsApp</span>
+              <a href="tel:+353000000000" style="font-size:1.15rem;font-weight:700;">+353 (0) 000 000 000</a>
+            </div>
+          </div>
+
+          <div class="info-contact-item" data-reveal>
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <span class="info-label">Email</span>
+              <a href="mailto:info@summervillecontractors.ie">info@summervillecontractors.ie</a>
+            </div>
+          </div>
+
+          <div class="info-contact-item" data-reveal>
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <span class="info-label">Service Area</span>
+              <p>Dublin &amp; surrounding counties, Ireland</p>
+            </div>
+          </div>
+
+          <!-- Office hours -->
+          <div style="margin-top:40px;" data-reveal>
+            <h4 style="margin-bottom:4px;">Office Hours</h4>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:0;">Outside hours? Leave a voicemail and we'll call back the next morning.</p>
+            <div class="hours-grid">
+              <div class="hours-cell"><div class="day">Mon – Fri</div><div class="time">8:00am – 5:30pm</div></div>
+              <div class="hours-cell"><div class="day">Saturday</div><div class="time">9:00am – 1:00pm</div></div>
+              <div class="hours-cell" style="grid-column:1/-1;"><div class="day">Sunday &amp; Bank Holidays</div><div class="time closed">Closed</div></div>
+            </div>
+          </div>
+
+          <!-- Coverage areas -->
+          <div style="margin-top:40px;" data-reveal>
+            <h4 style="margin-bottom:8px;">Areas We Cover</h4>
+            <div class="area-tags">
+              <div class="area-tag">Dublin City</div>
+              <div class="area-tag">Co. Dublin</div>
+              <div class="area-tag">Co. Wicklow</div>
+              <div class="area-tag">Co. Kildare</div>
+              <div class="area-tag">Co. Meath</div>
+              <div class="area-tag">Co. Louth</div>
+              <div class="area-tag">Co. Wexford</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Call CTA card -->
+        <div data-reveal="right">
+          <div class="call-cta-block">
+            <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Fastest Way to Reach Us</span>
+            <h3 style="color:#fff;font-size:1.6rem;margin:12px 0 4px;font-weight:800;">Call Us Directly</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.75;max-width:320px;">Our team answers calls during office hours. For a free quote or to book a site visit, call us now.</p>
+
+            <div class="call-number">
+              <div class="call-number-icon">
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <a href="tel:+353000000000">+353 (0) 000 000 000</a>
+                <small>Mon–Fri 8am–5:30pm · Sat 9am–1pm</small>
+              </div>
+            </div>
+
+            <a href="tel:+353000000000" class="btn-call">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Call Now for a Free Quote
+            </a>
+
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.15);">
+              <p style="color:rgba(255,255,255,0.6);font-size:0.78rem;margin-bottom:12px;">Prefer to email? We respond within one business day.</p>
+              <a href="mailto:info@summervillecontractors.ie" class="btn-email">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Send an Email
+              </a>
+            </div>
+          </div>
+
+          <!-- Why call us -->
+          <div style="margin-top:2px;padding:28px 32px;background:var(--bg-alt);border:1px solid var(--border);">
+            <h4 style="font-size:0.9rem;margin-bottom:16px;">What Happens When You Call</h4>
+            <ul class="checklist">
+              <li>We discuss your project requirements in detail</li>
+              <li>We advise on the best approach and rough cost ranges</li>
+              <li>We arrange a free site visit, usually within 48 hours</li>
+              <li>You receive a fully itemised written quote within 5 working days</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+</body>
+</html>

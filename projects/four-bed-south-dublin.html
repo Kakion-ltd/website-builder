@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Four-Bed Detached, South Dublin — Summerville Contractors Ltd</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .project-layout { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; }
+    .project-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); }
+    .detail-card { background: var(--bg-alt); border: 1px solid var(--border); padding: 32px; margin-bottom: 16px; }
+    .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 16px; }
+    .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .detail-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
+    .detail-value { font-size: 0.88rem; font-weight: 600; color: var(--dark); text-align: right; }
+    .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 48px; }
+    .photo-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), filter 0.3s; overflow: hidden; }
+    .photo-gallery div { overflow: hidden; }
+    .photo-gallery div:hover img { transform: scale(1.04); filter: brightness(0.9); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { border: 1px solid var(--border); overflow: hidden; display: block; transition: border-color 0.2s, transform 0.2s; }
+    .related-card:hover { border-color: var(--brand); transform: translateY(-3px); }
+    .related-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s; }
+    .related-card:hover img { transform: scale(1.04); }
+    .related-card-info { padding: 14px 16px; }
+    .related-card-info .tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); margin-bottom: 4px; }
+    .related-card-info h5 { font-size: 0.88rem; color: var(--dark); }
+    @media (max-width: 900px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } }
+    @media (max-width: 600px) { .photo-gallery { grid-template-columns: 1fr 1fr; } .related-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80');">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <a href="../projects.html">Projects</a>
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <span>Four-Bed Detached, South Dublin</span>
+      </nav>
+      <span class="eyebrow">New Build · 2024</span>
+      <h1>Four-Bed Detached</h1>
+      <p>South Dublin — A complete turnkey new build delivered from foundation to final fit-out, on a tight suburban site.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="project-layout">
+
+        <!-- Main content -->
+        <div>
+          <span class="eyebrow">Project Overview</span>
+          <div class="divider"></div>
+          <h2>A Family Home Built to Last</h2>
+
+          <p style="margin-top:20px;">This four-bedroom detached residence in South Dublin was commissioned by a young family looking to build their forever home on an existing site inherited from family. The brief was clear: a modern, energy-efficient family home that would blend naturally with the character of the established neighbourhood while meeting the very latest building standards.</p>
+
+          <p style="margin-top:16px;">Summerville Contractors was appointed as the main contractor following a competitive tender process. Working alongside the client's appointed architect and structural engineer, we managed every stage of the build from site clearance through to full interior fit-out — acting as a single point of accountability throughout.</p>
+
+          <h3 style="margin-top:36px;margin-bottom:14px;">The Challenge</h3>
+          <p>The plot presented several challenges: restricted site access from a narrow laneway, proximity to neighbouring boundary walls requiring careful shoring, and a requirement to complete all groundworks during a dry weather window before the autumn rains. Careful programme planning and close co-ordination with the structural engineer allowed us to work through these constraints without delay.</p>
+          <p style="margin-top:16px;">The client also specified a high-performance building envelope to achieve an A2 BER rating — requiring triple-glazed windows, an MVHR (mechanical ventilation with heat recovery) system, and a ground-source heat pump. Integrating these systems during the build required detailed co-ordination between our electrical, plumbing, and insulation sub-teams.</p>
+
+          <h3 style="margin-top:36px;margin-bottom:14px;">Scope of Works</h3>
+          <ul class="checklist" style="margin-top:0;">
+            <li>Site clearance, topographical survey, and setting out</li>
+            <li>Excavation and reinforced concrete strip foundations</li>
+            <li>Two-storey block cavity wall construction with full fill insulation</li>
+            <li>Cut roof with natural slate, lead flashings, and EPDM flat roof sections</li>
+            <li>Triple-glazed windows and external doors — Irish Oak finish</li>
+            <li>K-rend silicone render externally, traditional stone sills</li>
+            <li>Ground-source heat pump, underfloor heating, and MVHR system</li>
+            <li>Full first and second fix electrical and plumbing</li>
+            <li>Wet plaster throughout, floor screeds, and ceramic floor tiles</li>
+            <li>Fitted kitchen, utility room, and four bathrooms — full supply and fit</li>
+            <li>Internal joinery — staircase, skirting, architraves, and fitted wardrobes</li>
+            <li>Block paved driveway, boundary walls, and garden landscaping</li>
+          </ul>
+
+          <h3 style="margin-top:36px;margin-bottom:14px;">The Outcome</h3>
+          <p>The project was completed on programme over 11 months from commencement to handover. The home achieved an A2 BER rating as specified, with projected annual heating costs of under €600. The clients were particularly pleased with the quality of the internal joinery and the seamless integration of the building services, which are largely invisible once the house is furnished.</p>
+          <p style="margin-top:16px;">Full BCAR compliance documentation, an Opticom BER certificate, and a 10-year HomeBond structural warranty were provided at handover.</p>
+
+          <!-- Gallery -->
+          <div class="photo-gallery" data-stagger="0.08">
+            <div><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80" alt="Four-bed detached exterior" /></div>
+            <div><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80" alt="Front elevation" /></div>
+            <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Side elevation and driveway" /></div>
+            <div><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=500&q=80" alt="Rear garden view" /></div>
+            <div><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Kitchen fit-out" /></div>
+            <div><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80" alt="Interior hallway" /></div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+          <div class="detail-card">
+            <h4 style="margin-bottom:20px;font-size:1rem;">Project Details</h4>
+            <div class="detail-row"><span class="detail-label">Type</span><span class="detail-value">New Build — Turnkey</span></div>
+            <div class="detail-row"><span class="detail-label">Location</span><span class="detail-value">South Dublin</span></div>
+            <div class="detail-row"><span class="detail-label">Completed</span><span class="detail-value">2024</span></div>
+            <div class="detail-row"><span class="detail-label">Duration</span><span class="detail-value">11 months</span></div>
+            <div class="detail-row"><span class="detail-label">Floor Area</span><span class="detail-value">210 m²</span></div>
+            <div class="detail-row"><span class="detail-label">BER Rating</span><span class="detail-value">A2</span></div>
+            <div class="detail-row"><span class="detail-label">Bedrooms</span><span class="detail-value">4 bed, 3 bath</span></div>
+            <div class="detail-row"><span class="detail-label">Warranty</span><span class="detail-value">HomeBond 10-Year</span></div>
+          </div>
+          <div class="detail-card">
+            <h4 style="margin-bottom:12px;font-size:0.9rem;">Key Features</h4>
+            <ul class="checklist" style="font-size:0.82rem;">
+              <li>Ground-source heat pump</li>
+              <li>Triple-glazed windows throughout</li>
+              <li>MVHR ventilation system</li>
+              <li>Natural slate roof</li>
+              <li>Underfloor heating — ground &amp; first floor</li>
+            </ul>
+          </div>
+          <a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+            Discuss a Similar Project
+          </a>
+          <a href="../services/new-builds.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">
+            Our New Build Service
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">More Projects</span>
+        <div class="divider"></div>
+        <h2>Related Projects</h2>
+      </div>
+      <div class="related-grid">
+        <a href="three-bed-meath.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80" alt="Three-Bed, Meath" />
+          <div class="related-card-info"><p class="tag">New Build</p><h5>Three-Bed Semi-Detached — Co. Meath</h5></div>
+        </a>
+        <a href="two-storey-extension-lucan.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Extension, Lucan" />
+          <div class="related-card-info"><p class="tag">Extension</p><h5>Two-Storey Side Extension — Lucan</h5></div>
+        </a>
+        <a href="period-renovation-kildare.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" alt="Renovation, Kildare" />
+          <div class="related-card-info"><p class="tag">Renovation</p><h5>Period Home Renovation — Co. Kildare</h5></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <div><h2>Planning a New Build?</h2><p>Call our team for a free consultation and site visit.</p></div>
+      <a href="../contact.html" class="btn btn-outline-white btn-lg">Get in Touch</a>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="../components.js"></script>
+</body>
+</html>
