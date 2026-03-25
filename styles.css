@@ -251,7 +251,7 @@ p { line-height: 1.75; }
 @media (max-width: 960px) {
   .nav-links, .nav-phone { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-quote-btn { display: none; }
+  .nav-actions .nav-quote-btn { display: none !important; }
   .nav-call-icon {
     display: flex;
     align-items: center;
