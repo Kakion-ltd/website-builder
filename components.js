@@ -75,13 +75,15 @@
     <div class="nav-mobile" id="mobile-menu">
       <a href="${base}index.html">Home</a>
       <a href="${base}about.html">About</a>
-      <a href="${base}services.html" style="font-weight:700;">Services</a>
-      <div class="mobile-sub">${mobileServiceLinks}</div>
+      <div class="mobile-services-row">
+        <a href="${base}services.html">Services</a>
+        <button class="mobile-services-toggle" id="mobile-services-toggle" aria-label="Toggle services menu">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="mobile-sub" id="mobile-services-sub">${mobileServiceLinks}</div>
       <a href="${base}projects.html">Projects</a>
       <a href="${base}contact.html">Contact</a>
-      <div class="mobile-cta">
-        <a href="${base}contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get a Free Quote</a>
-      </div>
     </div>
   `;
 
@@ -163,6 +165,12 @@
     const btn = e.target.closest('#hamburger');
     if (btn) {
       document.getElementById('mobile-menu').classList.toggle('open');
+    }
+    const svcToggle = e.target.closest('#mobile-services-toggle');
+    if (svcToggle) {
+      const sub = document.getElementById('mobile-services-sub');
+      const isOpen = sub.classList.toggle('open');
+      svcToggle.classList.toggle('open', isOpen);
     }
   });
 
