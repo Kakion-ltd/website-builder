@@ -108,6 +108,21 @@ p { line-height: 1.75; }
   color: var(--dark);
   transition: color 0.18s;
 }
+.nav-links > li > a { position: relative; }
+.nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+.nav-links > li > a:hover::after,
+.nav-links > li > a.active::after { transform: scaleX(1); }
 .nav-links > li > a:hover,
 .nav-links > li > a.active { color: var(--brand); }
 
@@ -255,22 +270,23 @@ p { line-height: 1.75; }
   padding: 13px 28px;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.15s, box-shadow 0.18s;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   white-space: nowrap;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
 
 .btn-primary {
-  background: var(--brand);
+  background: linear-gradient(180deg, #13bffc 0%, var(--brand-dark) 100%);
   color: var(--white);
   border-color: var(--brand);
-  box-shadow: 0 2px 16px rgba(11,175,232,0.2);
+  box-shadow: 0 2px 10px rgba(11,175,232,0.18);
 }
 .btn-primary:hover {
-  background: var(--brand-dark);
+  background: linear-gradient(180deg, #0BAFE8 0%, #0778a0 100%);
   border-color: var(--brand-dark);
-  box-shadow: 0 4px 24px rgba(11,175,232,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 .btn-outline {
   background: transparent;
@@ -346,8 +362,9 @@ p { line-height: 1.75; }
 }
 .card:hover {
   border-color: var(--brand);
-  box-shadow: 0 4px 32px rgba(13,27,42,0.07);
+  box-shadow: 0 8px 40px rgba(13,27,42,0.1);
   transform: translateY(-3px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 .card-icon {
   width: 48px;

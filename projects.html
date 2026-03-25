@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Summerville Contractors Ltd</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     .filter-bar {
       display: flex;
@@ -180,6 +181,19 @@
     </div>
   </section>
 
+  <!-- WHERE WE WORK MAP -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header section-header--center" style="margin-bottom:32px;">
+        <span class="eyebrow">Coverage</span>
+        <div class="divider divider--center"></div>
+        <h2>Where We Work</h2>
+      </div>
+      <div id="project-map" style="width:100%;height:500px;border:1px solid var(--border);"></div>
+      <p style="text-align:center;color:var(--muted);font-size:0.88rem;margin-top:16px;">We serve Dublin and all surrounding Leinster counties.</p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section">
     <div class="container">
@@ -192,7 +206,44 @@
   </div>
 
   <div id="footer-placeholder"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="components.js"></script>
+  <script>
+    // Leaflet project map
+    (function () {
+      const map = L.map('project-map', { scrollWheelZoom: false }).setView([53.1, -7.1], 8);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+        maxZoom: 19
+      }).addTo(map);
+
+      const brandIcon = L.divIcon({
+        className: '',
+        html: '<div style="width:14px;height:14px;background:#0BAFE8;border:2.5px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(11,175,232,0.5);"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+        popupAnchor: [0, -10]
+      });
+
+      const projects = [
+        { lat: 53.2794, lng: -6.3733, name: 'Four-Bed Detached New Build', location: 'South Dublin' },
+        { lat: 52.9808, lng: -6.0447, name: 'Open-Plan Kitchen Extension', location: 'Co. Wicklow' },
+        { lat: 53.1589, lng: -6.9094, name: 'Period Home Renovation', location: 'Co. Kildare' },
+        { lat: 53.4597, lng: -6.2181, name: 'Master Suite Attic Conversion', location: 'Swords, Co. Dublin' },
+        { lat: 53.3586, lng: -6.4497, name: 'Two-Storey Side Extension', location: 'Lucan, Co. Dublin' },
+        { lat: 53.6055, lng: -6.6564, name: 'Three-Bed Semi-Detached New Build', location: 'Co. Meath' },
+        { lat: 52.8414, lng: -6.1563, name: 'Driveway & Boundary Walls', location: 'Co. Wicklow' },
+        { lat: 53.3201, lng: -6.2677, name: 'Full Internal Refurbishment', location: 'Dublin 6' },
+        { lat: 53.1822, lng: -6.7957, name: 'Rear Single-Storey Extension', location: 'Newbridge, Co. Kildare' }
+      ];
+
+      projects.forEach(p => {
+        L.marker([p.lat, p.lng], { icon: brandIcon })
+          .addTo(map)
+          .bindPopup(`<strong style="font-size:0.85rem;color:#0D1B2A;">${p.name}</strong><br><span style="font-size:0.78rem;color:#7A8D9A;">${p.location}</span>`);
+      });
+    })();
+  </script>
   <script>
     // Filter functionality
     const buttons = document.querySelectorAll('.filter-btn');
