@@ -116,6 +116,13 @@
       align-items: start;
     }
     @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cta-hero { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; }
+    @media (max-width: 700px) {
+      .contact-cta-hero { grid-template-columns: 1fr; }
+      .contact-cta-hero a { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 600px) { .call-cta-block { padding: 40px 24px; } }
+    @media (max-width: 480px) { .hours-grid { grid-template-columns: 1fr; } }
     .hours-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -169,7 +176,7 @@
   <!-- MAIN CALL CTA — full width prominence -->
   <section style="background:var(--bg-alt);padding:64px 0;border-bottom:1px solid var(--border);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;flex-wrap:wrap;" class="contact-cta-hero">
+      <div class="contact-cta-hero">
         <div>
           <span class="eyebrow">Speak to Our Team</span>
           <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px;">Get a Free Quote Today</h2>
