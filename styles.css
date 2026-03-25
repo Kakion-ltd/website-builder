@@ -238,9 +238,34 @@ p { line-height: 1.75; }
   margin-top: 20px;
 }
 
+/* Mobile call icon — hidden on desktop */
+.nav-call-icon {
+  display: none;
+}
+
+@keyframes callGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(11,175,232,0.55), 0 0 0 0 rgba(11,175,232,0.3); }
+  50%       { box-shadow: 0 0 0 7px rgba(11,175,232,0.15), 0 0 0 14px rgba(11,175,232,0); }
+}
+
 @media (max-width: 960px) {
   .nav-links, .nav-phone { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-quote-btn { display: none; }
+  .nav-call-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    flex-shrink: 0;
+    animation: callGlow 2s ease-in-out infinite;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .nav-call-icon:active { transform: scale(0.92); background: var(--brand-dark); }
 }
 
 /* === BUTTONS === */
