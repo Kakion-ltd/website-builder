@@ -315,6 +315,7 @@ p { line-height: 1.75; }
   }
   .nav-contact-btn:hover,
   .nav-contact-btn:active { background: var(--brand-dark); }
+  .nav-contact-btn { margin-right: 10px; }
   .nav-hamburger { display: flex; margin-left: 0; }
 }
 @media (max-width: 400px) {
