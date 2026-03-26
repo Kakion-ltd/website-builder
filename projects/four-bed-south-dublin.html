@@ -14,7 +14,7 @@
     .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
     .detail-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
     .detail-value { font-size: 0.88rem; font-weight: 600; color: var(--dark); text-align: right; }
-    .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 48px; }
+    .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 48px; }
     .photo-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), filter 0.3s; overflow: hidden; }
     .photo-gallery div { overflow: hidden; }
     .photo-gallery div:hover img { transform: scale(1.04); filter: brightness(0.9); }
@@ -51,54 +51,31 @@
 
   <section class="section">
     <div class="container">
+      <div class="photo-gallery" data-stagger="0.08">
+        <div><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=500&q=80" alt="Four-bed detached exterior" /></div>
+        <div><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=500&q=80" alt="Front elevation" /></div>
+        <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Side elevation and driveway" /></div>
+        <div><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80" alt="Rear garden view" /></div>
+        <div><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Kitchen fit-out" /></div>
+        <div><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80" alt="Interior hallway" /></div>
+      </div>
       <div class="project-layout">
-
-        <!-- Main content -->
         <div>
           <span class="eyebrow">Project Overview</span>
           <div class="divider"></div>
           <h2>A Family Home Built to Last</h2>
-
-          <p style="margin-top:20px;">This four-bedroom detached residence in South Dublin was commissioned by a young family looking to build their forever home on an existing site inherited from family. The brief was clear: a modern, energy-efficient family home that would blend naturally with the character of the established neighbourhood while meeting the very latest building standards.</p>
-
-          <p style="margin-top:16px;">Summerville Contractors was appointed as the main contractor following a competitive tender process. Working alongside the client's appointed architect and structural engineer, we managed every stage of the build from site clearance through to full interior fit-out — acting as a single point of accountability throughout.</p>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">The Challenge</h3>
-          <p>The plot presented several challenges: restricted site access from a narrow laneway, proximity to neighbouring boundary walls requiring careful shoring, and a requirement to complete all groundworks during a dry weather window before the autumn rains. Careful programme planning and close co-ordination with the structural engineer allowed us to work through these constraints without delay.</p>
-          <p style="margin-top:16px;">The client also specified a high-performance building envelope to achieve an A2 BER rating — requiring triple-glazed windows, an MVHR (mechanical ventilation with heat recovery) system, and a ground-source heat pump. Integrating these systems during the build required detailed co-ordination between our electrical, plumbing, and insulation sub-teams.</p>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">Scope of Works</h3>
-          <ul class="checklist" style="margin-top:0;">
-            <li>Site clearance, topographical survey, and setting out</li>
-            <li>Excavation and reinforced concrete strip foundations</li>
-            <li>Two-storey block cavity wall construction with full fill insulation</li>
-            <li>Cut roof with natural slate, lead flashings, and EPDM flat roof sections</li>
+          <p style="margin-top:20px;">A turnkey 4-bed detached new build in South Dublin, delivered over 11 months from site clearance to full fit-out. The restricted site required careful co-ordination with the structural engineer, while the A2 BER specification meant integrating a ground-source heat pump, MVHR system, and triple-glazed windows across the build programme.</p>
+          <p style="margin-top:16px;">Full BCAR compliance documentation, an Opticom BER certificate, and a 10-year HomeBond structural warranty were provided at handover.</p>
+          <ul class="checklist" style="margin-top:24px;">
+            <li>Site clearance, strip foundations, and two-storey block cavity walls</li>
+            <li>Cut roof — natural slate, lead flashings, and EPDM flat sections</li>
             <li>Triple-glazed windows and external doors — Irish Oak finish</li>
-            <li>K-rend silicone render externally, traditional stone sills</li>
-            <li>Ground-source heat pump, underfloor heating, and MVHR system</li>
-            <li>Full first and second fix electrical and plumbing</li>
-            <li>Wet plaster throughout, floor screeds, and ceramic floor tiles</li>
-            <li>Fitted kitchen, utility room, and four bathrooms — full supply and fit</li>
-            <li>Internal joinery — staircase, skirting, architraves, and fitted wardrobes</li>
+            <li>Ground-source heat pump, underfloor heating, and MVHR</li>
+            <li>Full electrical, plumbing, wet plaster, and floor screeds</li>
+            <li>Fitted kitchen, utility, and four bathrooms — supply and fit</li>
             <li>Block paved driveway, boundary walls, and garden landscaping</li>
           </ul>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">The Outcome</h3>
-          <p>The project was completed on programme over 11 months from commencement to handover. The home achieved an A2 BER rating as specified, with projected annual heating costs of under €600. The clients were particularly pleased with the quality of the internal joinery and the seamless integration of the building services, which are largely invisible once the house is furnished.</p>
-          <p style="margin-top:16px;">Full BCAR compliance documentation, an Opticom BER certificate, and a 10-year HomeBond structural warranty were provided at handover.</p>
-
-          <!-- Gallery -->
-          <div class="photo-gallery" data-stagger="0.08">
-            <div><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=500&q=80" alt="Four-bed detached exterior" /></div>
-            <div><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=500&q=80" alt="Front elevation" /></div>
-            <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Side elevation and driveway" /></div>
-            <div><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80" alt="Rear garden view" /></div>
-            <div><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Kitchen fit-out" /></div>
-            <div><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80" alt="Interior hallway" /></div>
-          </div>
         </div>
-
-        <!-- Sidebar -->
         <aside class="project-sidebar">
           <div class="detail-card">
             <h4 style="margin-bottom:20px;font-size:1rem;">Project Details</h4>
@@ -121,12 +98,8 @@
               <li>Underfloor heating — ground &amp; first floor</li>
             </ul>
           </div>
-          <a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
-            Discuss a Similar Project
-          </a>
-          <a href="../services/new-builds.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">
-            Our New Build Service
-          </a>
+          <a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Discuss a Similar Project</a>
+          <a href="../services/new-builds.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">Our New Build Service</a>
         </aside>
       </div>
     </div>

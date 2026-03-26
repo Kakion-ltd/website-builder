@@ -447,7 +447,7 @@ p { line-height: 1.75; }
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
-.card:hover::before { opacity: 0.04; }
+.card:hover::before { opacity: 0.11; }
 .card--extensions::before { background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=60'); }
 .card--new-builds::before { background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=60'); }
 .card--renovations::before { background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=60'); }

@@ -14,7 +14,7 @@
     .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
     .detail-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
     .detail-value { font-size: 0.88rem; font-weight: 600; color: var(--dark); text-align: right; }
-    .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 48px; }
+    .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 48px; }
     .photo-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), filter 0.3s; }
     .photo-gallery div { overflow: hidden; }
     .photo-gallery div:hover img { transform: scale(1.04); filter: brightness(0.9); }
@@ -51,55 +51,31 @@
 
   <section class="section">
     <div class="container">
+      <div class="photo-gallery" data-stagger="0.08">
+        <div><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=80" alt="Restored reception room" /></div>
+        <div><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Shaker kitchen" /></div>
+        <div><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=500&q=80" alt="Bathroom renovation" /></div>
+        <div><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=500&q=80" alt="Engineered oak floor and hallway" /></div>
+        <div><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=500&q=80" alt="Restored Victorian staircase" /></div>
+        <div><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=500&q=80" alt="Victorian terrace exterior, Ranelagh" /></div>
+      </div>
       <div class="project-layout">
-
         <div>
           <span class="eyebrow">Project Overview</span>
           <div class="divider"></div>
           <h2>Victorian Character, Modern Comfort</h2>
-
-          <p style="margin-top:20px;">This mid-terrace Victorian house in Ranelagh was purchased as an investment by a client who intended to let it. The property had been in use as a student rental for many years and had been significantly altered — original features removed, plasterwork damaged, and the electrical and plumbing systems in very poor condition. The client wanted a complete overhaul: every room stripped and rebuilt to a high standard, with original Victorian features either restored or carefully replicated.</p>
-
-          <p style="margin-top:16px;">Given the property's location in Ranelagh — an architecturally sensitive area — the client was keen to ensure that the character of the house was preserved. Summerville's brief was to strip the interior back to bare brickwork and structure, rectify all defects, and deliver a high-quality finished property ready for tenanting. All works were designed to comply with the minimum BER requirements for rental properties under the current regulations.</p>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">Restoring Original Features</h3>
-          <p>The house had its original ceiling cornices in two rooms — damaged but largely intact. Our plasterers carefully repaired these using traditional lime-based filler and restoration techniques, avoiding the harsh contrast of modern gypsum plasters against original lime cornices. The cast iron fireplaces, while present, had been painted over several times; these were stripped and restored using a specialist metal finishing company.</p>
-          <p style="margin-top:16px;">The staircase was original — a fine Victorian dog-leg stair with turned newels and balusters — but several balusters were missing and the handrail had been damaged. We sourced matching turned balusters from a Dublin joinery specialist and restored the handrail in situ, retaining the original profile and proportion.</p>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">Scope of Works</h3>
-          <ul class="checklist" style="margin-top:0;">
-            <li>Full internal strip-out — all plasterwork, flooring, and fixtures</li>
-            <li>Structural assessment — remedial lintel works above two door openings</li>
-            <li>Damp-proof injection to front ground-floor wall</li>
-            <li>Full rewire — new consumer unit, RCBO protection, LED downlights</li>
-            <li>Full replumb — pressurised system, new cylinder, and radiators</li>
-            <li>New A-rated condensing gas boiler and smart controls</li>
-            <li>Lime-based renovation plaster throughout — breathable system</li>
-            <li>Cornice repair and restoration in two rooms</li>
-            <li>Victorian fireplace surround restoration — x3</li>
-            <li>Staircase restoration — missing balusters replaced, handrail repaired</li>
-            <li>Engineered oak flooring — hallway and reception rooms</li>
-            <li>Porcelain tiles — kitchen and bathrooms</li>
-            <li>New fitted kitchen — shaker style to suit period character</li>
-            <li>Three bathrooms — full supply and installation</li>
-            <li>Internal door replacement — period-appropriate 4-panel style</li>
-            <li>Full redecoration — Farrow &amp; Ball colour scheme</li>
+          <p style="margin-top:20px;">A full strip-back and refurbishment of a Victorian terrace in Ranelagh — stripped to bare brickwork, fully rewired and replumbed, and rebuilt to a high standard. Original features were carefully restored rather than replaced: ceiling cornices repaired with lime plaster, cast iron fireplaces stripped and refinished, and the Victorian dog-leg staircase restored with matched replacement balusters.</p>
+          <p style="margin-top:16px;">Completed in 16 weeks. BER improved from E2 to C3. Leased at a premium rental within two weeks of handover.</p>
+          <ul class="checklist" style="margin-top:24px;">
+            <li>Full internal strip-out and structural remedial works</li>
+            <li>Full rewire, replumb, and A-rated condensing boiler</li>
+            <li>Lime-based breathable plaster throughout</li>
+            <li>Cornice restoration (×2 rooms) and fireplace restoration (×3)</li>
+            <li>Staircase restoration — replacement balusters and handrail repair</li>
+            <li>Engineered oak flooring and shaker kitchen</li>
+            <li>Three bathrooms and full redecoration</li>
           </ul>
-
-          <h3 style="margin-top:36px;margin-bottom:14px;">The Outcome</h3>
-          <p>The project was completed over 16 weeks. The property is now a beautifully presented Victorian terraced house that retains all its original character while performing to a modern standard. The BER rating improved from an E2 to a C3 — a significant improvement for a solid-wall Victorian property.</p>
-          <p style="margin-top:16px;">The client's letting agent was able to lease the property at a premium rental within two weeks of handover — above the market rate for the area, which the agent attributed to the quality of the finish and the retention of the period features. The plasterwork and joinery restoration were particularly noted.</p>
-
-          <div class="photo-gallery" data-stagger="0.08">
-            <div><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=500&q=80" alt="Victorian terrace exterior, Ranelagh" /></div>
-            <div><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=80" alt="Restored reception room" /></div>
-            <div><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Shaker kitchen" /></div>
-            <div><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=500&q=80" alt="Bathroom renovation" /></div>
-            <div><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=500&q=80" alt="Engineered oak floor and hallway" /></div>
-            <div><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=500&q=80" alt="Restored Victorian staircase" /></div>
-          </div>
         </div>
-
         <aside class="project-sidebar">
           <div class="detail-card">
             <h4 style="margin-bottom:20px;font-size:1rem;">Project Details</h4>
