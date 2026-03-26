@@ -163,6 +163,7 @@
     const btn = e.target.closest('#hamburger');
     if (btn) {
       document.getElementById('mobile-menu').classList.toggle('open');
+      btn.classList.toggle('open');
     }
     const svcToggle = e.target.closest('#mobile-services-toggle');
     if (svcToggle) {
