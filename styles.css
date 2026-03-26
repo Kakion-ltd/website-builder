@@ -504,7 +504,12 @@ p { line-height: 1.75; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
-@media (max-width: 700px) { .stats-bar .container { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) {
+  .stats-bar .container { grid-template-columns: 1fr 1fr; }
+  .stat-item { padding: 24px 16px; }
+  .stat-number { font-size: 2rem; }
+  .stat-label { font-size: 0.68rem; letter-spacing: 0.07em; }
+}
 
 /* === DIVIDER === */
 .divider { width: 48px; height: 3px; background: var(--brand); margin: 0 0 28px; }
