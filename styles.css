@@ -195,10 +195,7 @@ p { line-height: 1.75; }
   border: none;
   cursor: pointer;
   padding: 6px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
 }
-.nav-hamburger:hover { background: rgba(11,175,232,0.08); }
 .nav-hamburger span {
   display: block;
   width: 22px;
@@ -213,7 +210,6 @@ p { line-height: 1.75; }
 .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-hamburger.open:hover { background: rgba(11,175,232,0.08); }
 .nav-mobile {
   display: none;
   position: fixed;
