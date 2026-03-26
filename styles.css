@@ -206,7 +206,7 @@ p { line-height: 1.75; }
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 64px;
+  top: var(--nav-h);
   left: 0;
   right: 0;
   bottom: 0;
@@ -289,14 +289,8 @@ p { line-height: 1.75; }
 .nav-contact-btn { display: none; }
 
 @media (max-width: 960px) {
-  #nav-root { height: 64px; }
-  .nav-inner {
-    justify-content: flex-start;
-    padding: 0 16px;
-    gap: 0;
-  }
+  .nav-inner { justify-content: flex-start; }
   .nav-logo { margin-right: auto; }
-  .nav-logo img { height: 46px; }
   .nav-links, .nav-phone { display: none; }
   .nav-actions {
     display: flex;
