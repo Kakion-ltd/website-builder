@@ -113,15 +113,26 @@
     .project-item:hover .view-link { transform: translateX(0); }
     .project-item-overlay .view-link svg { transition: transform 0.25s ease; }
     .project-item:hover .view-link svg { transform: translateX(3px); }
-    @media (max-width: 768px) { .projects-full-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 960px) { .projects-full-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 500px) { .projects-full-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1100px) {
+      .filter-btn { padding: 7px 14px; font-size: 0.68rem; letter-spacing: 0.06em; }
+      .filter-bar { gap: 6px; }
+    }
+    @media (max-width: 900px) {
+      .filter-btn { padding: 6px 11px; font-size: 0.64rem; letter-spacing: 0.05em; }
+      .filter-bar { gap: 5px; justify-content: center; }
+    }
+    @media (max-width: 560px) {
+      .filter-btn { padding: 6px 12px; font-size: 0.65rem; }
+    }
   </style>
 </head>
 <body>
 
   <div id="nav-placeholder"></div>
 
-  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1400&q=80');">
+  <div class="page-banner" style="background-image:url('brand_assets/dublin-terrace-1.jpg');">
     <div class="container">
       <nav class="breadcrumb">
         <a href="index.html">Home</a>
@@ -150,7 +161,7 @@
       <div class="projects-full-grid" id="projects-grid" data-stagger="0.07">
 
         <a class="project-item" href="projects/four-bed-south-dublin.html" data-category="new-build">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="New build, South Dublin" />
+          <img src="brand_assets/killester-semi.jpg" alt="New build, South Dublin" />
           <div class="project-item-always"><span class="tag">New Build</span></div>
           <div class="project-item-overlay">
             <p class="tag">New Build</p>
@@ -161,7 +172,7 @@
         </a>
 
         <a class="project-item" href="projects/open-plan-extension-wicklow.html" data-category="extension">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" alt="Extension, Wicklow" />
+          <img src="brand_assets/new-bride-street.jpg" alt="Extension, Wicklow" />
           <div class="project-item-always"><span class="tag">House Extension</span></div>
           <div class="project-item-overlay">
             <p class="tag">House Extension</p>
@@ -172,7 +183,7 @@
         </a>
 
         <a class="project-item" href="projects/period-renovation-kildare.html" data-category="renovation">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Renovation, Kildare" />
+          <img src="brand_assets/merrion-square.jpg" alt="Renovation, Kildare" />
           <div class="project-item-always"><span class="tag">Full Renovation</span></div>
           <div class="project-item-overlay">
             <p class="tag">Full Renovation</p>
@@ -183,7 +194,7 @@
         </a>
 
         <a class="project-item" href="projects/master-suite-attic-swords.html" data-category="attic">
-          <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=600&q=80" alt="Attic conversion, Swords" />
+          <img src="brand_assets/henrietta-street.jpg" alt="Attic conversion, Swords" />
           <div class="project-item-always"><span class="tag">Attic Conversion</span></div>
           <div class="project-item-overlay">
             <p class="tag">Attic Conversion</p>
@@ -194,7 +205,7 @@
         </a>
 
         <a class="project-item" href="projects/two-storey-extension-lucan.html" data-category="extension">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Two-storey extension, Lucan" />
+          <img src="brand_assets/rathmines-street.jpg" alt="Two-storey extension, Lucan" />
           <div class="project-item-always"><span class="tag">House Extension</span></div>
           <div class="project-item-overlay">
             <p class="tag">House Extension</p>
@@ -205,7 +216,7 @@
         </a>
 
         <a class="project-item" href="projects/three-bed-meath.html" data-category="new-build">
-          <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=600&q=80" alt="New build, Meath" />
+          <img src="brand_assets/modern-irish-house.jpg" alt="New build, Meath" />
           <div class="project-item-always"><span class="tag">New Build</span></div>
           <div class="project-item-overlay">
             <p class="tag">New Build</p>
@@ -216,7 +227,7 @@
         </a>
 
         <a class="project-item" href="projects/driveway-boundary-walls-wicklow.html" data-category="external">
-          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=600&q=80" alt="External works, Wicklow" />
+          <img src="brand_assets/dublin-suburban.jpg" alt="External works, Wicklow" />
           <div class="project-item-always"><span class="tag">External Works</span></div>
           <div class="project-item-overlay">
             <p class="tag">External Works</p>
@@ -227,7 +238,7 @@
         </a>
 
         <a class="project-item" href="projects/refurbishment-dublin6.html" data-category="renovation">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Renovation, Dublin 6" />
+          <img src="brand_assets/merrion-square.jpg" alt="Renovation, Dublin 6" />
           <div class="project-item-always"><span class="tag">Renovation</span></div>
           <div class="project-item-overlay">
             <p class="tag">Renovation</p>
@@ -238,7 +249,7 @@
         </a>
 
         <a class="project-item" href="projects/rear-extension-newbridge.html" data-category="extension">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80" alt="Rear extension, Kildare" />
+          <img src="brand_assets/rathmines-2.jpg" alt="Rear extension, Kildare" />
           <div class="project-item-always"><span class="tag">House Extension</span></div>
           <div class="project-item-overlay">
             <p class="tag">House Extension</p>

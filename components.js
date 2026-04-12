@@ -21,12 +21,13 @@
 
   // ── NAV ──────────────────────────────────────────
   const services = [
-    ['House Extensions',   'services/house-extensions.html'],
     ['New Builds',         'services/new-builds.html'],
+    ['Extensions',         'services/house-extensions.html'],
     ['Renovations',        'services/renovations.html'],
     ['Attic Conversions',  'services/attic-conversions.html'],
-    ['Planning & Design',  'services/planning-design.html'],
-    ['External Works',     'services/external-works.html'],
+    ['Roofing',            'services/roofing.html'],
+    ['Carpentry',          'services/carpentry.html'],
+    ['Velux Installation', 'services/velux-installation.html'],
   ];
 
   const dropdownLinks = services
@@ -41,7 +42,7 @@
     <nav id="nav-root">
       <div class="container nav-inner">
         <a href="${base}index.html" class="nav-logo">
-          <img src="${base}brand_assets/Untitled design (13).png" alt="Summerville Contractors Ltd" />
+          <img src="${base}brand_assets/summerville-logo-dark.png" alt="Summerville Contractors Ltd" />
         </a>
 
         <ul class="nav-links">
@@ -87,7 +88,7 @@
       <div class="container">
         <div class="footer-main">
           <div class="footer-logo">
-            <img src="${base}brand_assets/Untitled design (13).png" alt="Summerville Contractors Ltd" />
+            <img src="${base}brand_assets/summerville-logo-white.png" alt="Summerville Contractors Ltd" />
             <p class="footer-tagline">Premium residential construction, extensions &amp; renovations across Dublin and surrounding counties.</p>
           </div>
           <div>
@@ -103,12 +104,13 @@
           <div>
             <p class="footer-heading">Services</p>
             <div class="footer-links">
-              <a href="${base}services/house-extensions.html">House Extensions</a>
               <a href="${base}services/new-builds.html">New Builds</a>
+              <a href="${base}services/house-extensions.html">Extensions</a>
               <a href="${base}services/renovations.html">Renovations</a>
               <a href="${base}services/attic-conversions.html">Attic Conversions</a>
-              <a href="${base}services/planning-design.html">Planning &amp; Design</a>
-              <a href="${base}services/external-works.html">External Works</a>
+              <a href="${base}services/roofing.html">Roofing</a>
+              <a href="${base}services/carpentry.html">Carpentry</a>
+              <a href="${base}services/velux-installation.html">Velux Installation</a>
             </div>
           </div>
           <div>
@@ -130,11 +132,7 @@
         <div class="footer-bottom">
           <p>© 2026 Summerville Contractors Ltd. All rights reserved. VAT Registered in Ireland.</p>
           <div class="footer-accreditations">
-            <div class="accreditation-badge">
-              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-              CIRI Registered
-            </div>
-            <div class="accreditation-badge">
+<div class="accreditation-badge">
               <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
               Fully Insured
             </div>
