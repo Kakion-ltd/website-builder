@@ -6,6 +6,421 @@
   <title>Roofing Dublin & Leinster — Summerville Contractors Ltd</title>
   <meta name="description" content="Expert roofing solutions for new builds, repairs, and replacements across Dublin and Leinster. Slate, tile, and flat-roof systems installed by Summerville Contractors Ltd." />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* ========================================
+       HOUSE EXTENSIONS — PAGE-SCOPED REDESIGN
+       Prototype for Scope / Types / Process
+       ======================================== */
+
+    /* ── Scope of Works card ── */
+    .scope-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brand);
+      padding: 40px 44px;
+      box-shadow: 0 2px 24px rgba(13,27,42,0.04);
+    }
+    .scope-group { margin-top: 28px; }
+    .scope-group:first-of-type { margin-top: 20px; }
+    .scope-group-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .scope-group-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(13,27,42,0.08);
+    }
+    .scope-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+    .scope-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.86rem;
+      color: var(--dark);
+      line-height: 1.55;
+    }
+    .scope-bullets .tick {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      background: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      box-shadow: 0 1px 4px rgba(11,175,232,0.3);
+    }
+    .scope-bullets .tick svg { display: block; }
+    @media (max-width: 560px) {
+      .scope-card { padding: 30px 26px; }
+      .scope-bullets { grid-template-columns: 1fr; }
+    }
+
+    /* ── Extension Types grid ── */
+    .types-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .types-grid--wide { grid-template-columns: repeat(4, 1fr); margin-top: 0; }
+    @media (max-width: 960px) { .types-grid--wide { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .types-grid--wide { grid-template-columns: 1fr; } }
+    .type-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;
+    }
+    .type-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+      z-index: 3;
+    }
+    .type-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 38px rgba(11,175,232,0.18), 0 2px 6px rgba(13,27,42,0.06);
+    }
+    .type-card:hover::before { transform: scaleX(1); }
+    .type-card:hover .type-card-title { color: var(--brand); }
+    .type-card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .type-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .type-card:hover .type-card-thumb img { transform: scale(1.06); }
+    .type-card-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.25) 0%, transparent 60%);
+    }
+    .type-card-body { padding: 18px 20px 22px; }
+    .type-card-title {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+      transition: color 0.25s ease;
+    }
+    .type-card-body p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .type-card .popular-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 4;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      box-shadow: 0 4px 14px rgba(11,175,232,0.4);
+    }
+    @media (max-width: 560px) {
+      .types-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Process timeline ── */
+    .process-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding-top: 40px;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 59px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 0;
+      border-top: 1.5px dotted var(--brand);
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .ptl-step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid rgba(13,27,42,0.08);
+      padding: 48px 22px 26px;
+      text-align: center;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+    .ptl-step:nth-child(even) { background: var(--bg-alt); }
+    .ptl-step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(11,175,232,0.14);
+      border-color: rgba(11,175,232,0.35);
+    }
+    .ptl-chip {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 18px rgba(11,175,232,0.4), 0 0 0 4px var(--white);
+      z-index: 2;
+    }
+    .ptl-step h4 {
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .ptl-step p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 860px) {
+      .process-timeline { grid-template-columns: 1fr 1fr; }
+      .process-timeline::before { display: none; }
+    }
+    @media (max-width: 560px) {
+      .process-timeline {
+        grid-template-columns: 1fr;
+        padding-left: 32px;
+        padding-top: 20px;
+      }
+      .process-timeline::before {
+        display: block;
+        top: 20px; bottom: 20px;
+        left: 21px; right: auto;
+        width: 0;
+        height: auto;
+        border-top: none;
+        border-left: 1.5px dotted var(--brand);
+      }
+      .ptl-step {
+        text-align: left;
+        padding: 22px 22px 22px 46px;
+      }
+      .ptl-chip {
+        top: 50%;
+        left: -22px;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    /* ── Modern process — dark editorial ── */
+    .process-modern {
+      position: relative;
+      background: #0A1624;
+      color: var(--white);
+      padding: 120px 0 140px;
+      overflow: hidden;
+    }
+    .process-modern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(900px 500px at 85% 0%, rgba(11,175,232,0.12) 0%, transparent 60%),
+        radial-gradient(700px 400px at 15% 100%, rgba(11,175,232,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .process-modern::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    }
+    .process-modern .container { position: relative; z-index: 1; }
+
+    .pm-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 72px;
+    }
+    .pm-head .eyebrow { color: var(--brand); }
+    .pm-head h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 14px 0 0;
+      max-width: 560px;
+    }
+    .pm-head-meta {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .pm-head-meta::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--brand);
+    }
+
+    .pm-rail {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .pm-rail::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: calc(6.3rem + 33px);
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(11,175,232,0) 0%,
+        rgba(11,175,232,0.55) 10%,
+        rgba(11,175,232,0.55) 90%,
+        rgba(11,175,232,0) 100%
+      );
+    }
+
+    .pm-step {
+      position: relative;
+      padding: 0 26px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .pm-step:first-child { border-left: none; }
+
+    .pm-num {
+      font-family: var(--font);
+      font-size: 7rem;
+      font-weight: 800;
+      line-height: 0.9;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.18);
+      letter-spacing: -0.04em;
+      display: block;
+      transition: -webkit-text-stroke-color 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .pm-dot {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #0A1624;
+      border: 2px solid var(--brand);
+      margin: 26px 0 32px;
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .pm-dot::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(11,175,232,0.3);
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .pm-step h4 {
+      font-size: 1.05rem;
+      color: var(--white);
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+    .pm-step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+      margin: 0;
+      max-width: 230px;
+    }
+    .pm-step:hover .pm-num {
+      -webkit-text-stroke-color: transparent;
+      color: var(--brand);
+      transform: translateY(-2px);
+    }
+    .pm-step:hover .pm-dot {
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(11,175,232,0.15), 0 0 24px rgba(11,175,232,0.6);
+      transform: scale(1.1);
+    }
+    .pm-step:hover .pm-dot::before {
+      opacity: 1;
+      transform: scale(1.25);
+    }
+
+    @media (max-width: 960px) {
+      .pm-rail { grid-template-columns: 1fr 1fr; gap: 56px 0; }
+      .pm-rail::before, .pm-rail::after { display: none; }
+      .pm-num { font-size: 5.5rem; }
+      .pm-step p { max-width: none; }
+    }
+    @media (max-width: 560px) {
+      .process-modern { padding: 80px 0 90px; }
+      .pm-head { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 48px; }
+      .pm-rail { grid-template-columns: 1fr; gap: 40px; }
+      .pm-step { padding: 0 0 0 0; border-left: none; }
+      .pm-num { font-size: 4.2rem; }
+      .pm-dot { margin: 18px 0 20px; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
@@ -21,7 +436,7 @@
       </nav>
       <span class="eyebrow">Our Services</span>
       <h1>Roofing</h1>
-      <p>Expert roofing solutions for new builds, repairs, and replacements — slate, tile, and flat-roof systems installed to the highest standard.</p>
+      <p>Slate, tile, and flat-roof systems for new builds, repairs, and replacements.</p>
     </div>
   </div>
 
@@ -35,8 +450,8 @@
           <span class="eyebrow">Roofing</span>
           <div class="divider"></div>
           <h2>Watertight. Weatherproof. Built to Last.</h2>
-          <p style="margin-top:20px;">Your roof is the most important protective element of your home. Whether you're building new, replacing an aging roof, or dealing with storm damage, Summerville Contractors delivers roofing that performs for decades — with careful detailing, quality materials, and meticulous workmanship.</p>
-          <p style="margin-top:16px;">We install natural slate, concrete and clay tile, and modern flat-roof membrane systems on new builds, extensions, and replacement projects — and handle repairs, leak diagnostics, and gutter and fascia works across Dublin and Leinster.</p>
+          <p style="margin-top:20px;">Your roof is the most important protective element of your home. We deliver roofing that performs for decades, with careful detailing and quality materials.</p>
+          <p style="margin-top:16px;">We install slate, clay and concrete tile, and flat-roof membranes — and handle repairs, leak diagnostics, and gutter and fascia works.</p>
           <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
             <a href="../contact.html" class="btn btn-primary">Request a Roofing Quote</a>
             <a href="../projects.html" class="btn btn-outline">View Our Projects</a>
@@ -48,80 +463,88 @@
 
   <section class="section section--alt">
     <div class="container">
-      <div class="svc-detail-grid">
-        <div>
-          <span class="eyebrow">Scope of Works</span>
-          <div class="divider"></div>
-          <h2>What We Cover</h2>
-          <p style="margin-top:16px;margin-bottom:28px;">From full roof installations to targeted repairs, we deliver every aspect of roofing in-house:</p>
-          <ul class="checklist">
-            <li>New build roof construction — timber frame to finished covering</li>
-            <li>Natural slate and concrete/clay tile installation</li>
-            <li>Flat-roof systems — EPDM, felt, and single-ply membrane</li>
-            <li>Full roof replacements and re-roofing</li>
-            <li>Storm damage repair and emergency make-safe</li>
-            <li>Chimney repair, lead flashing, and re-pointing</li>
-            <li>Fascia, soffit, and gutter renewal</li>
-            <li>Roof insulation upgrades (warm and cold roof)</li>
-            <li>Velux and rooflight integration (see Velux Installation)</li>
-            <li>Attic ventilation and breathable membrane detailing</li>
-          </ul>
+      <div class="section-header section-header--center">
+        <span class="eyebrow">Roofing Services</span>
+        <div class="divider divider--center"></div>
+        <h2>What We Cover</h2>
+        <p>From new builds to storm damage repairs — delivered in-house.</p>
+      </div>
+      <div class="types-grid types-grid--wide" data-stagger="0.08">
+        <div class="type-card">
+          <span class="popular-tag">Most Popular</span>
+          <div class="type-card-thumb">
+            <img src="../brand_assets/dublin-suburban.jpg" alt="Full re-roof" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Re-Roofs</span>
+            <p>Full re-roofing in natural slate, clay, or concrete tile to current standards.</p>
+          </div>
         </div>
-        <div>
-          <span class="eyebrow">Our Standards</span>
-          <div class="divider"></div>
-          <h2>Proven Materials. Proven Methods.</h2>
-          <p style="margin-top:16px;margin-bottom:24px;">Every Summerville roof is installed to current NSAI and manufacturer standards:</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">I.S. EN 14782 Compliance</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">All coverings and fixings meet Irish and European roofing standards.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Breathable Membrane Systems</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Moisture-managed detailing to eliminate condensation risk.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Manufacturer-Backed Warranties</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Up to 25-year product warranties on supported materials.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Safe Working at Height</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Fully scaffolded, insured, and Safe Pass certified crews.</p></div>
-            </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/killester-semi.jpg" alt="New roof construction" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">New Roofs</span>
+            <p>New build roof construction, frame to covering, with breathable membrane detailing.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/dublin-terrace-1.jpg" alt="Roof repairs and flashing" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Repairs &amp; Flashing</span>
+            <p>Storm damage, chimney repairs, lead flashing, and fascia or gutter renewal.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/modern-irish-house.jpg" alt="Flat roof systems" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Flat Roofs</span>
+            <p>EPDM, felt, and single-ply systems with manufacturer-backed warranties.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="process-modern">
     <div class="container">
-      <div class="section-header section-header--center">
-        <span class="eyebrow">How It Works</span>
-        <div class="divider divider--center"></div>
-        <h2>Our Roofing Process</h2>
+      <div class="pm-head">
+        <div>
+          <span class="eyebrow">How It Works</span>
+          <h2>Our Roofing Process</h2>
+        </div>
+        <div class="pm-head-meta">Four steps · start to finish</div>
       </div>
-      <div class="process-steps" style="border:1px solid var(--border);">
-        <div class="process-step">
-          <span class="step-number">Step 01</span>
+
+      <div class="pm-rail" data-stagger="0.12">
+        <div class="pm-step">
+          <span class="pm-num">01</span>
+          <div class="pm-dot"></div>
           <h4>Inspection &amp; Survey</h4>
-          <p>We survey your existing roof or new-build drawings and identify the right system for your project and budget.</p>
+          <p>We survey your existing roof or drawings and recommend the right system.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 02</span>
+        <div class="pm-step">
+          <span class="pm-num">02</span>
+          <div class="pm-dot"></div>
           <h4>Quote &amp; Scope</h4>
-          <p>You receive a fully itemised quotation with materials, labour, access, and programme clearly laid out.</p>
+          <p>An itemised quotation with materials, labour, access, and programme.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 03</span>
+        <div class="pm-step">
+          <span class="pm-num">03</span>
+          <div class="pm-dot"></div>
           <h4>Installation</h4>
-          <p>Scaffolding is erected, works are completed to programme, and the site is kept tidy and secure throughout.</p>
+          <p>Scaffolded, completed to programme, and the site kept tidy throughout.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 04</span>
+        <div class="pm-step">
+          <span class="pm-num">04</span>
+          <div class="pm-dot"></div>
           <h4>Sign-Off &amp; Warranty</h4>
-          <p>Final inspection, clean-down, and handover of product warranty documentation.</p>
+          <p>Final inspection, clean-down, and product warranty handover.</p>
         </div>
       </div>
     </div>
@@ -131,7 +554,7 @@
     <div class="container">
       <div>
         <h2>Need a New Roof or a Repair?</h2>
-        <p>Talk to our roofing team — we'll advise on the right solution for your property.</p>
+        <p>Talk to our team for the right solution for your property.</p>
       </div>
       <a href="../contact.html" class="btn btn-outline-white btn-lg">Get in Touch</a>
     </div>

@@ -6,6 +6,8 @@
   <title>Summerville Contractors Ltd — Building &amp; Renovation Experts, Ireland</title>
   <meta name="description" content="Summerville Contractors Ltd — premium residential construction, extensions and renovations across Dublin and surrounding counties." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="brand_assets/kitchen.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="brand_assets/summerville-logo-dark.png" fetchpriority="high" />
 </head>
 <body>
 
@@ -229,7 +231,7 @@
           </div>
         </div>
         <div class="hero-image hero-anim-img">
-          <img src="brand_assets/kitchen.jpg" alt="Bespoke kitchen renovation by Summerville Contractors" />
+          <img src="brand_assets/kitchen.jpg" alt="Bespoke kitchen renovation by Summerville Contractors" width="800" height="900" fetchpriority="high" decoding="async" />
           <div class="hero-image-badge">
             <div class="badge-icon">
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -242,105 +244,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Animated architectural house outline -->
-    <svg class="hero-house-svg" viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
-      <!-- Grid lines -->
-      <g class="grid-g">
-        <line class="grid-line" x1="0" y1="65"  x2="700" y2="65"/>
-        <line class="grid-line" x1="0" y1="130" x2="700" y2="130"/>
-        <line class="grid-line" x1="0" y1="195" x2="700" y2="195"/>
-        <line class="grid-line" x1="0" y1="260" x2="700" y2="260"/>
-        <line class="grid-line" x1="0" y1="325" x2="700" y2="325"/>
-        <line class="grid-line" x1="0" y1="390" x2="700" y2="390"/>
-        <line class="grid-line" x1="0" y1="455" x2="700" y2="455"/>
-        <line class="grid-line" x1="70"  y1="0" x2="70"  y2="520"/>
-        <line class="grid-line" x1="140" y1="0" x2="140" y2="520"/>
-        <line class="grid-line" x1="210" y1="0" x2="210" y2="520"/>
-        <line class="grid-line" x1="280" y1="0" x2="280" y2="520"/>
-        <line class="grid-line" x1="350" y1="0" x2="350" y2="520"/>
-        <line class="grid-line" x1="420" y1="0" x2="420" y2="520"/>
-        <line class="grid-line" x1="490" y1="0" x2="490" y2="520"/>
-        <line class="grid-line" x1="560" y1="0" x2="560" y2="520"/>
-        <line class="grid-line" x1="630" y1="0" x2="630" y2="520"/>
-      </g>
-
-      <!-- Ground baseline -->
-      <line class="draw-path" style="--len:700;animation-delay:1s;" x1="30" y1="470" x2="670" y2="470"/>
-
-      <!-- Main walls (house body) -->
-      <polyline class="draw-path" style="--len:1100;animation-delay:1.8s;"
-        points="120,470 120,290 380,290 380,470"/>
-      <!-- Left wall detail -->
-      <line class="draw-path" style="--len:180;animation-delay:2.6s;" x1="120" y1="350" x2="80" y2="350"/>
-      <line class="draw-path" style="--len:180;animation-delay:2.7s;" x1="80" y1="350" x2="80" y2="470"/>
-
-      <!-- Roof (pitched) -->
-      <polyline class="draw-path" style="--len:700;animation-delay:3s;"
-        points="95,290 250,155 405,290"/>
-      <!-- Roof ridge line -->
-      <line class="draw-path" style="--len:60;animation-delay:3.6s;" x1="250" y1="155" x2="250" y2="145"/>
-
-      <!-- Chimney -->
-      <polyline class="draw-path" style="--len:200;animation-delay:4s;"
-        points="190,245 190,115 225,115 225,210"/>
-      <!-- Chimney top cap -->
-      <line class="draw-path" style="--len:50;animation-delay:4.2s;" x1="182" y1="115" x2="233" y2="115"/>
-      <!-- Smoke wisp -->
-      <path class="draw-path" style="--len:80;animation-delay:4.4s;" d="M207,105 Q200,85 210,70 Q218,58 207,45"/>
-
-      <!-- Window 1 (left, upper) -->
-      <rect class="draw-path" style="--len:220;animation-delay:4.5s;" x="138" y="320" width="55" height="45"/>
-      <line class="draw-path" style="--len:55;animation-delay:4.9s;" x1="165" y1="320" x2="165" y2="365"/>
-      <line class="draw-path" style="--len:45;animation-delay:5.0s;" x1="138" y1="342" x2="193" y2="342"/>
-
-      <!-- Window 2 (centre, upper) -->
-      <rect class="draw-path" style="--len:220;animation-delay:4.6s;" x="218" y="320" width="55" height="45"/>
-      <line class="draw-path" style="--len:55;animation-delay:5.0s;" x1="245" y1="320" x2="245" y2="365"/>
-      <line class="draw-path" style="--len:45;animation-delay:5.1s;" x1="218" y1="342" x2="273" y2="342"/>
-
-      <!-- Window 3 (right, upper) -->
-      <rect class="draw-path" style="--len:220;animation-delay:4.7s;" x="298" y="320" width="55" height="45"/>
-      <line class="draw-path" style="--len:55;animation-delay:5.1s;" x1="325" y1="320" x2="325" y2="365"/>
-      <line class="draw-path" style="--len:45;animation-delay:5.2s;" x1="298" y1="342" x2="353" y2="342"/>
-
-      <!-- Dormer window in roof -->
-      <polyline class="draw-path" style="--len:260;animation-delay:4.8s;"
-        points="222,255 222,205 278,205 278,255"/>
-      <polyline class="draw-path" style="--len:120;animation-delay:5.2s;"
-        points="210,255 250,228 290,255"/>
-      <line class="draw-path" style="--len:40;animation-delay:5.3s;" x1="250" y1="205" x2="250" y2="228"/>
-
-      <!-- Front door -->
-      <rect class="draw-path" style="--len:280;animation-delay:5.5s;" x="210" y="390" width="80" height="80"/>
-      <!-- Door frame inner -->
-      <rect class="draw-path" style="--len:240;animation-delay:5.7s;" x="216" y="396" width="68" height="68"/>
-      <!-- Door panels -->
-      <line class="draw-path" style="--len:68;animation-delay:5.8s;" x1="250" y1="396" x2="250" y2="464"/>
-      <line class="draw-path" style="--len:68;animation-delay:5.9s;" x1="216" y1="430" x2="284" y2="430"/>
-      <!-- Door handle -->
-      <circle class="draw-path" style="--len:20;animation-delay:5.95s;" cx="268" cy="427" r="4"/>
-      <!-- Door step -->
-      <line class="draw-path" style="--len:110;animation-delay:6.0s;" x1="200" y1="470" x2="310" y2="470"/>
-
-      <!-- Garage / side extension -->
-      <polyline class="draw-path" style="--len:700;animation-delay:6.1s;"
-        points="380,470 380,355 530,355 530,470"/>
-      <!-- Garage roof (flat with slight pitch) -->
-      <polyline class="draw-path" style="--len:200;animation-delay:6.4s;"
-        points="375,355 455,330 535,355"/>
-      <!-- Garage door -->
-      <rect class="draw-path" style="--len:320;animation-delay:6.5s;" x="400" y="385" width="110" height="85"/>
-      <!-- Garage door panels (horizontal lines) -->
-      <line class="draw-path" style="--len:110;animation-delay:6.6s;" x1="400" y1="410" x2="510" y2="410"/>
-      <line class="draw-path" style="--len:110;animation-delay:6.7s;" x1="400" y1="435" x2="510" y2="435"/>
-      <line class="draw-path" style="--len:110;animation-delay:6.8s;" x1="400" y1="458" x2="510" y2="458"/>
-      <!-- Garage side window -->
-      <rect class="draw-path" style="--len:160;animation-delay:6.9s;" x="542" y="375" width="48" height="40"/>
-      <line class="draw-path" style="--len:40;animation-delay:7.0s;" x1="566" y1="375" x2="566" y2="415"/>
-
-    </svg>
 
   </section>
 
@@ -523,7 +426,7 @@
     <div class="container">
       <div class="grid-2">
         <div class="img-reveal" data-reveal="left">
-          <img src="brand_assets/killester-semi.jpg" alt="Irish residential construction by Summerville Contractors" style="width:100%; object-fit:cover;" />
+          <img src="brand_assets/killester-semi.jpg" alt="Irish residential construction by Summerville Contractors" loading="lazy" decoding="async" style="width:100%; object-fit:cover;" />
         </div>
         <div data-reveal="right">
           <span class="eyebrow">About Summerville</span>
@@ -703,6 +606,6 @@
   </div>
 
   <div id="footer-placeholder"></div>
-  <script src="components.js"></script>
+  <script src="components.js" defer></script>
 </body>
 </html>

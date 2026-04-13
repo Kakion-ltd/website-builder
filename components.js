@@ -5,12 +5,11 @@
 
 (function () {
   // Determine path prefix based on current page depth
-  const depth = window.location.pathname.split('/').filter(Boolean).length;
-  const isSubdir = window.location.pathname.includes('/services/');
+  const path = window.location.pathname;
+  const isSubdir = /\/(services|projects)\//.test(path);
   const base = isSubdir ? '../' : '';
 
   // Mark active nav link
-  const path = window.location.pathname;
   function isActive(href) {
     const full = base + href;
     if (href === 'index.html' || href === '') {
@@ -42,7 +41,7 @@
     <nav id="nav-root">
       <div class="container nav-inner">
         <a href="${base}index.html" class="nav-logo">
-          <img src="${base}brand_assets/summerville-logo-dark.png" alt="Summerville Contractors Ltd" />
+          <img src="${base}brand_assets/summerville-logo-dark.png" alt="Summerville Contractors Ltd" width="240" height="78" fetchpriority="high" decoding="async" />
         </a>
 
         <ul class="nav-links">
@@ -88,7 +87,7 @@
       <div class="container">
         <div class="footer-main">
           <div class="footer-logo">
-            <img src="${base}brand_assets/summerville-logo-white.png" alt="Summerville Contractors Ltd" />
+            <img src="${base}brand_assets/summerville-logo-white.png" alt="Summerville Contractors Ltd" width="240" height="78" loading="lazy" decoding="async" />
             <p class="footer-tagline">Premium residential construction, extensions &amp; renovations across Dublin and surrounding counties.</p>
           </div>
           <div>
@@ -131,16 +130,6 @@
         </div>
         <div class="footer-bottom">
           <p>© 2026 Summerville Contractors Ltd. All rights reserved. VAT Registered in Ireland.</p>
-          <div class="footer-accreditations">
-<div class="accreditation-badge">
-              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-              Fully Insured
-            </div>
-            <div class="accreditation-badge">
-              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              VAT Registered
-            </div>
-          </div>
         </div>
       </div>
     </footer>

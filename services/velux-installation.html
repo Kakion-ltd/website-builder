@@ -6,6 +6,421 @@
   <title>Velux Installation Dublin & Leinster — Summerville Contractors Ltd</title>
   <meta name="description" content="Certified Velux installers across Dublin and Leinster. Roof window and sun tunnel installation, upgrades, and replacements by Summerville Contractors Ltd." />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* ========================================
+       HOUSE EXTENSIONS — PAGE-SCOPED REDESIGN
+       Prototype for Scope / Types / Process
+       ======================================== */
+
+    /* ── Scope of Works card ── */
+    .scope-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brand);
+      padding: 40px 44px;
+      box-shadow: 0 2px 24px rgba(13,27,42,0.04);
+    }
+    .scope-group { margin-top: 28px; }
+    .scope-group:first-of-type { margin-top: 20px; }
+    .scope-group-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .scope-group-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(13,27,42,0.08);
+    }
+    .scope-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+    .scope-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.86rem;
+      color: var(--dark);
+      line-height: 1.55;
+    }
+    .scope-bullets .tick {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      background: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      box-shadow: 0 1px 4px rgba(11,175,232,0.3);
+    }
+    .scope-bullets .tick svg { display: block; }
+    @media (max-width: 560px) {
+      .scope-card { padding: 30px 26px; }
+      .scope-bullets { grid-template-columns: 1fr; }
+    }
+
+    /* ── Extension Types grid ── */
+    .types-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .types-grid--wide { grid-template-columns: repeat(4, 1fr); margin-top: 0; }
+    @media (max-width: 960px) { .types-grid--wide { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .types-grid--wide { grid-template-columns: 1fr; } }
+    .type-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;
+    }
+    .type-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+      z-index: 3;
+    }
+    .type-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 38px rgba(11,175,232,0.18), 0 2px 6px rgba(13,27,42,0.06);
+    }
+    .type-card:hover::before { transform: scaleX(1); }
+    .type-card:hover .type-card-title { color: var(--brand); }
+    .type-card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .type-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .type-card:hover .type-card-thumb img { transform: scale(1.06); }
+    .type-card-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.25) 0%, transparent 60%);
+    }
+    .type-card-body { padding: 18px 20px 22px; }
+    .type-card-title {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+      transition: color 0.25s ease;
+    }
+    .type-card-body p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .type-card .popular-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 4;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      box-shadow: 0 4px 14px rgba(11,175,232,0.4);
+    }
+    @media (max-width: 560px) {
+      .types-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Process timeline ── */
+    .process-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding-top: 40px;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 59px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 0;
+      border-top: 1.5px dotted var(--brand);
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .ptl-step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid rgba(13,27,42,0.08);
+      padding: 48px 22px 26px;
+      text-align: center;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+    .ptl-step:nth-child(even) { background: var(--bg-alt); }
+    .ptl-step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(11,175,232,0.14);
+      border-color: rgba(11,175,232,0.35);
+    }
+    .ptl-chip {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 18px rgba(11,175,232,0.4), 0 0 0 4px var(--white);
+      z-index: 2;
+    }
+    .ptl-step h4 {
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .ptl-step p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 860px) {
+      .process-timeline { grid-template-columns: 1fr 1fr; }
+      .process-timeline::before { display: none; }
+    }
+    @media (max-width: 560px) {
+      .process-timeline {
+        grid-template-columns: 1fr;
+        padding-left: 32px;
+        padding-top: 20px;
+      }
+      .process-timeline::before {
+        display: block;
+        top: 20px; bottom: 20px;
+        left: 21px; right: auto;
+        width: 0;
+        height: auto;
+        border-top: none;
+        border-left: 1.5px dotted var(--brand);
+      }
+      .ptl-step {
+        text-align: left;
+        padding: 22px 22px 22px 46px;
+      }
+      .ptl-chip {
+        top: 50%;
+        left: -22px;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    /* ── Modern process — dark editorial ── */
+    .process-modern {
+      position: relative;
+      background: #0A1624;
+      color: var(--white);
+      padding: 120px 0 140px;
+      overflow: hidden;
+    }
+    .process-modern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(900px 500px at 85% 0%, rgba(11,175,232,0.12) 0%, transparent 60%),
+        radial-gradient(700px 400px at 15% 100%, rgba(11,175,232,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .process-modern::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    }
+    .process-modern .container { position: relative; z-index: 1; }
+
+    .pm-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 72px;
+    }
+    .pm-head .eyebrow { color: var(--brand); }
+    .pm-head h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 14px 0 0;
+      max-width: 560px;
+    }
+    .pm-head-meta {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .pm-head-meta::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--brand);
+    }
+
+    .pm-rail {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .pm-rail::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: calc(6.3rem + 33px);
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(11,175,232,0) 0%,
+        rgba(11,175,232,0.55) 10%,
+        rgba(11,175,232,0.55) 90%,
+        rgba(11,175,232,0) 100%
+      );
+    }
+
+    .pm-step {
+      position: relative;
+      padding: 0 26px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .pm-step:first-child { border-left: none; }
+
+    .pm-num {
+      font-family: var(--font);
+      font-size: 7rem;
+      font-weight: 800;
+      line-height: 0.9;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.18);
+      letter-spacing: -0.04em;
+      display: block;
+      transition: -webkit-text-stroke-color 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .pm-dot {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #0A1624;
+      border: 2px solid var(--brand);
+      margin: 26px 0 32px;
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .pm-dot::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(11,175,232,0.3);
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .pm-step h4 {
+      font-size: 1.05rem;
+      color: var(--white);
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+    .pm-step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+      margin: 0;
+      max-width: 230px;
+    }
+    .pm-step:hover .pm-num {
+      -webkit-text-stroke-color: transparent;
+      color: var(--brand);
+      transform: translateY(-2px);
+    }
+    .pm-step:hover .pm-dot {
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(11,175,232,0.15), 0 0 24px rgba(11,175,232,0.6);
+      transform: scale(1.1);
+    }
+    .pm-step:hover .pm-dot::before {
+      opacity: 1;
+      transform: scale(1.25);
+    }
+
+    @media (max-width: 960px) {
+      .pm-rail { grid-template-columns: 1fr 1fr; gap: 56px 0; }
+      .pm-rail::before, .pm-rail::after { display: none; }
+      .pm-num { font-size: 5.5rem; }
+      .pm-step p { max-width: none; }
+    }
+    @media (max-width: 560px) {
+      .process-modern { padding: 80px 0 90px; }
+      .pm-head { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 48px; }
+      .pm-rail { grid-template-columns: 1fr; gap: 40px; }
+      .pm-step { padding: 0 0 0 0; border-left: none; }
+      .pm-num { font-size: 4.2rem; }
+      .pm-dot { margin: 18px 0 20px; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
@@ -21,7 +436,7 @@
       </nav>
       <span class="eyebrow">Our Services</span>
       <h1>Velux Installation</h1>
-      <p>Certified Velux installers bringing natural light into your home — roof windows and sun tunnels fitted with watertight, weatherproof precision.</p>
+      <p>Certified roof window and sun tunnel installation, fitted watertight.</p>
     </div>
   </div>
 
@@ -35,8 +450,8 @@
           <span class="eyebrow">Velux Installation</span>
           <div class="divider"></div>
           <h2>Let Daylight In — Properly Fitted.</h2>
-          <p style="margin-top:20px;">A Velux roof window can completely transform a room, flooding attic spaces, kitchens, and extensions with natural daylight. But a roof window is only as good as its installation — poor detailing around flashings, membranes, and insulation can lead to leaks and cold-bridging for years to come.</p>
-          <p style="margin-top:16px;">As certified Velux installers, Summerville fits Velux roof windows, sun tunnels, and flat-roof rooflights with correctly specified flashing kits, sealed membranes, and properly insulated reveals — so you get the daylight without the problems.</p>
+          <p style="margin-top:20px;">A Velux transforms a room with natural daylight, but it's only as good as its installation — poor flashings and insulation lead to leaks and cold-bridging.</p>
+          <p style="margin-top:16px;">As certified installers, we fit roof windows, sun tunnels, and flat-roof rooflights with correct flashing kits, sealed membranes, and insulated reveals.</p>
           <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
             <a href="../contact.html" class="btn btn-primary">Request a Velux Quote</a>
             <a href="../projects.html" class="btn btn-outline">View Our Projects</a>
@@ -48,80 +463,88 @@
 
   <section class="section section--alt">
     <div class="container">
-      <div class="svc-detail-grid">
-        <div>
-          <span class="eyebrow">Scope of Works</span>
-          <div class="divider"></div>
-          <h2>What We Install</h2>
-          <p style="margin-top:16px;margin-bottom:28px;">From a single replacement window to a full banked installation, we handle every aspect:</p>
-          <ul class="checklist">
-            <li>Velux centre-pivot and top-hung roof windows</li>
-            <li>Sun tunnels for dark landings, hallways, and bathrooms</li>
-            <li>Flat-roof rooflights and walk-on glass units</li>
-            <li>Banked (combined) window installations</li>
-            <li>Like-for-like replacement of existing Velux windows</li>
-            <li>Correct flashing kits for slate, tile, and membrane roofs</li>
-            <li>Internal reveal plastering and finishing</li>
-            <li>Electric and solar-powered blind integration</li>
-            <li>Remote-control and rain-sensor opening upgrades</li>
-            <li>Full insulation and vapour-membrane detailing</li>
-          </ul>
+      <div class="section-header section-header--center">
+        <span class="eyebrow">What We Install</span>
+        <div class="divider divider--center"></div>
+        <h2>Velux &amp; Rooflight Options</h2>
+        <p>From a single replacement to a banked install — fitted the way the manufacturer intended.</p>
+      </div>
+      <div class="types-grid types-grid--wide" data-stagger="0.08">
+        <div class="type-card">
+          <span class="popular-tag">Most Popular</span>
+          <div class="type-card-thumb">
+            <img src="../brand_assets/new-bride-street.jpg" alt="Standard Velux install" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Standard Install</span>
+            <p>Centre-pivot and top-hung Velux roof windows with correct flashing kits.</p>
+          </div>
         </div>
-        <div>
-          <span class="eyebrow">Our Standards</span>
-          <div class="divider"></div>
-          <h2>Fitted to Last. Guaranteed to Seal.</h2>
-          <p style="margin-top:16px;margin-bottom:24px;">Every Velux install is done the way the manufacturer intended:</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Certified Velux Installers</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Trained to manufacturer specifications for fitting and flashing detail.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Genuine Velux Components</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Original flashing kits and insulation collars — no generic substitutes.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">10-Year Product Warranty</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">Full manufacturer warranty protection on all new Velux installations.</p></div>
-            </div>
-            <div style="padding:16px 20px;background:var(--white);border:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;">
-              <div style="width:8px;height:8px;min-width:8px;background:var(--brand);margin-top:6px;"></div>
-              <div><strong style="font-size:0.85rem;color:var(--dark);">Airtight &amp; Weathertight</strong><p style="font-size:0.8rem;color:var(--muted);margin-top:3px;line-height:1.6;">BDA-compliant sealing and vapour control at every interface.</p></div>
-            </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/henrietta-street.jpg" alt="Replacement Velux" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Like-for-Like Replacement</span>
+            <p>Swap out tired existing units with a 10-year manufacturer warranty.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/modern-irish-house.jpg" alt="Flat-roof rooflights" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Flat-Roof Rooflights</span>
+            <p>Rooflights and walk-on glass for flat-roof extensions and decks.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-card-thumb">
+            <img src="../brand_assets/kitchen.jpg" alt="Sun tunnels for dark rooms" loading="lazy" />
+          </div>
+          <div class="type-card-body">
+            <span class="type-card-title">Sun Tunnels</span>
+            <p>Natural daylight into dark landings and internal bathrooms.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="process-modern">
     <div class="container">
-      <div class="section-header section-header--center">
-        <span class="eyebrow">How It Works</span>
-        <div class="divider divider--center"></div>
-        <h2>Our Velux Installation Process</h2>
+      <div class="pm-head">
+        <div>
+          <span class="eyebrow">How It Works</span>
+          <h2>Our Velux Installation Process</h2>
+        </div>
+        <div class="pm-head-meta">Four steps · start to finish</div>
       </div>
-      <div class="process-steps" style="border:1px solid var(--border);">
-        <div class="process-step">
-          <span class="step-number">Step 01</span>
+
+      <div class="pm-rail" data-stagger="0.12">
+        <div class="pm-step">
+          <span class="pm-num">01</span>
+          <div class="pm-dot"></div>
           <h4>Site Visit</h4>
-          <p>We assess roof pitch, structure, and the room below to recommend the correct window size and position.</p>
+          <p>We assess pitch, structure, and room below to recommend size and position.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 02</span>
+        <div class="pm-step">
+          <span class="pm-num">02</span>
+          <div class="pm-dot"></div>
           <h4>Quote &amp; Specification</h4>
-          <p>A clear quote covering the Velux unit, flashing kit, internal works, and any scaffolding required.</p>
+          <p>A clear quote covering unit, flashing kit, internal works, and scaffolding.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 03</span>
+        <div class="pm-step">
+          <span class="pm-num">03</span>
+          <div class="pm-dot"></div>
           <h4>Installation</h4>
-          <p>Clean, single-day installation for most jobs — with all debris and offcuts removed on completion.</p>
+          <p>Clean, single-day installation for most jobs, with all debris removed.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number">Step 04</span>
+        <div class="pm-step">
+          <span class="pm-num">04</span>
+          <div class="pm-dot"></div>
           <h4>Internal Finish</h4>
-          <p>Reveal plastering and painting, followed by a handover of warranty and product documentation.</p>
+          <p>Reveal plastering and painting, then warranty and product handover.</p>
         </div>
       </div>
     </div>
@@ -131,7 +554,7 @@
     <div class="container">
       <div>
         <h2>Ready to Bring in the Light?</h2>
-        <p>Talk to our certified Velux team about the right windows for your home.</p>
+        <p>Talk to our certified team about the right windows for your home.</p>
       </div>
       <a href="../contact.html" class="btn btn-outline-white btn-lg">Get in Touch</a>
     </div>
