@@ -41,7 +41,7 @@
     <nav id="nav-root">
       <div class="container nav-inner">
         <a href="${base}index.html" class="nav-logo">
-          <img src="${base}brand_assets/summerville-logo-dark.png" alt="Summerville Contractors Ltd" width="240" height="78" fetchpriority="high" decoding="async" />
+          <img src="${base}brand_assets/summerville-logo-dark.png" alt="Summerville Contractors Ltd" width="400" height="191" fetchpriority="high" decoding="async" />
         </a>
 
         <ul class="nav-links">
@@ -87,7 +87,7 @@
       <div class="container">
         <div class="footer-main">
           <div class="footer-logo">
-            <img src="${base}brand_assets/summerville-logo-white.png" alt="Summerville Contractors Ltd" width="240" height="78" loading="lazy" decoding="async" />
+            <img src="${base}brand_assets/summerville-logo-white.png" alt="Summerville Contractors Ltd" width="400" height="191" loading="lazy" decoding="async" />
             <p class="footer-tagline">Premium residential construction, extensions &amp; renovations across Dublin and surrounding counties.</p>
           </div>
           <div>

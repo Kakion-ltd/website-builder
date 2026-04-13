@@ -9,7 +9,7 @@
   <link rel="preload" as="image" href="brand_assets/kitchen.jpg" fetchpriority="high" />
   <link rel="preload" as="image" href="brand_assets/summerville-logo-dark.png" fetchpriority="high" />
 </head>
-<body>
+<body class="home">
 
   <div id="nav-placeholder"></div>
 
@@ -199,9 +199,14 @@
         .hero-trust { margin-top: 28px; padding-top: 24px; gap: 16px; }
       }
       @media (max-width: 480px) {
-        .hero-text h1 { font-size: 2.2rem; }
-        .hero-actions { flex-direction: column; }
-        .hero-actions .btn { text-align: center; justify-content: center; }
+        .hero { padding: 28px 0 0; }
+        .hero-text { padding: 16px 0 36px; }
+        .hero-text h1 { font-size: 2rem; line-height: 1.12; margin-bottom: 18px; }
+        .hero-text p { font-size: 0.95rem; margin-bottom: 28px; }
+        .hero-actions { flex-direction: column; align-items: stretch; }
+        .hero-actions .btn { text-align: center; justify-content: center; width: 100%; }
+        .hero-image { min-height: 220px; }
+        .hero-trust { gap: 12px; margin-top: 22px; padding-top: 20px; }
       }
     </style>
 
@@ -354,7 +359,7 @@
 
         <div class="card card--new-builds">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           </div>
           <h3>New Builds</h3>
           <p>Full construction of new residential properties, built to the highest standard — from foundation to key handover with BCAR compliance.</p>
@@ -363,7 +368,7 @@
 
         <div class="card card--extensions">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 20V10l5-5 5 5v10H4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 20v-7h6v7h-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 10v-2m0 0V6m0 2h2m-2 0h-2"/></svg>
           </div>
           <h3>Extensions</h3>
           <p>Seamlessly designed extensions that add space and value to your home — single-storey, two-storey, and wrap-around builds.</p>
@@ -372,7 +377,7 @@
 
         <div class="card card--renovations">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21l3-3m4-4l7-7-3-3-7 7m3 3l-3 3-4 1 1-4 3-3m3 3l-3-3"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v3M3.5 4.5h3M18 16v3m-1.5-1.5h3"/></svg>
           </div>
           <h3>Renovations</h3>
           <p>Full internal and external refurbishments — replastering, rewiring, insulation upgrades, new kitchens and bathrooms, and complete fit-out finishes.</p>
@@ -381,7 +386,7 @@
 
         <div class="card card--attic">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l9-9 9 9M5 19h14"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 19v-4h4v4"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12L12 3l9 9"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 10v10h14V10"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 14h4v4h-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v4M10 16h4"/></svg>
           </div>
           <h3>Attic Conversions</h3>
           <p>Convert your attic into a usable bedroom, home office, or en-suite. Structural assessment, Velux installation, and staircase all included.</p>
@@ -390,7 +395,7 @@
 
         <div class="card card--roofing">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2 14L12 4l10 10"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 12l1-2m3 2l1-2m3 2l1-2m3 2l1-2"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 14v6h16v-6"/></svg>
           </div>
           <h3>Roofing</h3>
           <p>Expert roofing solutions for new builds, repairs, and replacements — slate, tile, and flat-roof systems installed to the highest standard.</p>
@@ -399,7 +404,7 @@
 
         <div class="card card--carpentry">
           <div class="card-icon">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--brand)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l-9 9a2 2 0 002.83 2.83l9-9"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l3-3 6 6-3 3-6-6z"/></svg>
           </div>
           <h3>Carpentry</h3>
           <p>Skilled carpentry work across all aspects of construction and finishing — from first-fix structural work to bespoke second-fix joinery.</p>
